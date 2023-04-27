@@ -42,11 +42,12 @@
                         <h3 class="business-one_title">Оставить заявку</h3>
                         <!-- Default Form -->
                         <div class="default-form">
-                           <form method="post" action="contact.html">
+                           <form method="post" >
+                              {% csrf_token %}
                               <div class="row clearfix">
                                  <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                     <label>Полное имя *</label>
-                                    <input type="text" name="username" placeholder="Jhon Doe" required="">
+                                    <input type="text" name="name" placeholder="ФИО" required="">
                                  </div>
                                  <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                     <label>Электронный адрес *</label>

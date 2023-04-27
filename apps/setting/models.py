@@ -31,6 +31,11 @@ class Setting(models.Model):
         verbose_name="График работы",
         blank=True,null=True
     )
+    graphic_clock = models.CharField(
+        max_length=255,
+        verbose_name="График работы в часах",
+        blank=True,null=True
+    )
     locate_url = models.URLField(
         verbose_name="Ссылка для адресса",
         blank=True,null=True        
@@ -41,6 +46,10 @@ class Setting(models.Model):
     )
     instagram = models.URLField(
         verbose_name="Instagram",
+        blank=True,null=True        
+    )
+    instagram_url = models.URLField(
+        verbose_name="Ссылка Instagram для показа",
         blank=True,null=True        
     )
     whatsapp = models.URLField(
@@ -110,3 +119,43 @@ class History(models.Model):
     class Meta:
         verbose_name = "Наши истории"
         verbose_name_plural = "Наша история"
+        
+class Number(models.Model):
+    clients = models.CharField(
+        max_length=255,
+        verbose_name="Активные клиенты"
+    )
+    review = models.CharField(
+        max_length=255,
+        verbose_name="Положительных отзывов"
+    )
+    team = models.CharField(
+        max_length=255,
+        verbose_name="Юристов"
+    )
+    
+    def __str__(self):
+        return f"{self.clients} - {self.review} - {self.team}"
+    
+    class Meta:
+        verbose_name = "Мы в числах"
+        verbose_name_plural = "Мы в числах"
+
+class Contact(models.Model):
+    name = models.CharField(
+        max_length=255,
+        verbose_name="Имя"
+    )
+    email = models.EmailField(
+        verbose_name="Почта"
+    )
+    message = models.TextField(
+        verbose_name="Сообщение"
+    )
+    
+    def __str__(self):
+        return f"{self.name} - {self.email} - {self.message} "
+    
+    class Meta:
+        verbose_name = "Обратные связи"
+        verbose_name_plural = "Обратная связь"

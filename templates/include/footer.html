@@ -20,23 +20,22 @@
                    <!-- Footer Column -->
                    <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                       <div class="footer-widget newsletter-widget">
-                         <h4>Newsletter</h4>
-                         <div class="text">Subscribe our newsletter to get our latest update & news</div>
-                         <!-- Email Box -->
-                         <div class="email-box">
-                            <form method="post" action="contact.html">
-                               <div class="form-group">
-                                  <input type="email" name="search-field" value="" placeholder="Your mail address" required>
-                                  <button type="submit"><span class="icon fa-solid fa-paper-plane fa-fw"></span></button>
-                               </div>
-                            </form>
-                         </div>
+                         <h4>Наши социальные сети:</h4>
+                         
                          <!-- Social Box -->
                          <ul class="social-box">
-                            <li><a href="https://www.twitter.com/" class="fa-brands fa-facebook-f fa-fw"></a></li>
-                            <li><a href="https://www.facebook.com/" class="fa-brands fa-twitter fa-fw"></a></li>
-                            <li><a href="https://dribbble.com/" class="fa-solid fa-dribbble fa-fw"></a></li>
-                            <li><a href="https://behance.com/" class="fa-solid fa-behance fa-fw"></a></li>
+                           {% if setting.facebook %}
+                            <li><a href="{{setting.facebook}}" class="fa-brands fa-facebook-f fa-fw"></a></li>
+                            {% endif%}
+                            {% if setting.instagram%}
+                            <li><a href="{{setting.instagram}}" class="fa-brands fa-instagram fa-fw"></a></li>
+                            {% endif %}
+                           {% if setting.whatsapp%}
+                            <li><a href="{{setting.whatsapp}}" class="fa-solid fa-whatsapp fa-fw"></a></li>
+                            {% endif %}
+                            {% if setting.youtube%}
+                            <li><a href="{{setting.youtube}}" class="fa-solid fa-youtube fa-fw"></a></li>
+                            {% endif %}
                          </ul>
                          <!-- End Social Box -->
                       </div>
@@ -49,45 +48,29 @@
                    <!-- Footer Column -->
                    <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                       <div class="footer-widget contact-widget">
-                         <h4>Official info:</h4>
+                         <h4>Свяжитесь:</h4>
                          <ul class="contact-list">
-                            <li><span class="icon fa fa-phone"></span> 30 Commercial Road <br> Fratton, Australia</li>
-                            <li><span class="icon fa fa-envelope"></span> 1-888-452-1505</li>
+                            <li><span class="icon fa fa-phone"></span> {{setting.phone}}</li>
+                            <li><span class="icon fa fa-envelope"></span> {{setting.email}}5</li>
                          </ul>
                          <div class="timing">
-                            <strong>Open Hours: </strong>
-                            Mon - Sat: 8 am - 5 pm, <br> Sunday: CLOSED
+                            <strong>Мы открыты: </strong>
+                            {{setting.graphic}}<br>{{setting.graphic_clock}}
                          </div>
                       </div>
                    </div>
                    <!-- Footer Column -->
-                   <div class="footer-column col-lg-6 col-md-6 col-sm-12">
-                      <div class="footer-widget instagram-widget">
-                         <h4>Instagram</h4>
-                         <div class="widget-content">
-                            <div class="images-outer clearfix">
-                               <!--Image Box-->
-                               <figure class="image-box"><a class="lightbox-image" href="{% static 'images/gallery/1.jpg' %}"><img src="{% static 'images/gallery/footer-gallery-thumb-1.jpg' %}" alt=""></a></figure>
-                               <!--Image Box-->
-                               <figure class="image-box"><a class="lightbox-image" href="{% static 'images/gallery/2.jpg' %}"><img src="{% static 'images/gallery/footer-gallery-thumb-2.jpg' %}" alt=""></a></figure>
-                               <!--Image Box-->
-                               <figure class="image-box"><a class="lightbox-image" href="{% static 'images/gallery/3.jpg' %}"><img src="{% static 'images/gallery/footer-gallery-thumb-3.jpg' %}" alt=""></a></figure>
-                               <!--Image Box-->
-                               <figure class="image-box"><a class="lightbox-image" href="{% static 'images/gallery/4.jpg' %}"><img src="{% static 'images/gallery/footer-gallery-thumb-4.jpg' %}" alt=""></a></figure>
-                               <!--Image Box-->
-                               <figure class="image-box"><a class="lightbox-image" href="{% static 'images/gallery/5.jpg' %}"><img src="{% static 'images/gallery/footer-gallery-thumb-5.jpg' %}" alt=""></a></figure>
-                               <!--Image Box-->
-                               <figure class="image-box"><a class="lightbox-image" href="{% static 'images/gallery/6.jpg' %}"><img src="{% static 'images/gallery/footer-gallery-thumb-6.jpg' %}" alt=""></a></figure>
-                            </div>
-                         </div>
+                   <div class="col-lg-6 mt-5 mt-lg-0">
+                     <div class="contact-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3032.5443684419747!2d72.79158066215403!3d40.529560897211844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bdac1005a14c77%3A0xba1873075c4f7d54!2z0JDRgdCw0YQg0LjQsdC9INCR0YPRgNGF0LjRjyDQutCw0LHRi9GA0Ys!5e0!3m2!1sru!2skg!4v1682578976801!5m2!1sru!2skg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                       </div>
-                   </div>
+                 </div>
                 </div>
              </div>
           </div>
        </div>
        <div class="footer-bottom">
-          <div class="copyright">2023 &copy; All rights reserved by <a href="#">Themexriver</a></div>
+          <div class="copyright">2023 &copy;  Все права защищены <a href="https://www.instagram.com/erk1nbaew/">Nurbolot Erk1nbaew</a></div>
        </div>
     </div>
  </footer>

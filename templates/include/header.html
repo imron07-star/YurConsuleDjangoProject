@@ -11,13 +11,16 @@
                         <!-- Social Box -->
                         <ul class="header-social_box-two">
                            {% if setting.facebook %}
-                           <li><a href="https://www..com/" class="fa-brands fa-facebook-f fa-fw"></a></li>
+                           <li><a href="{{setting.facebook}}" class="fa-brands fa-facebook-f fa-fw"></a></li>
                            {% endif %}
                            {% if setting.instagram %}
-                           <li><a href="https://www.facebook.com/" class="fa-brands fa-instagram fa-fw"></a></li>
+                           <li><a href="{{setting.instagram}}" class="fa-brands fa-instagram fa-fw"></a></li>
                            {% endif %}
                            {% if setting.whatsapp %}
-                           <li><a href="https://www.linkedin.com/" class="fa-brands fa-whatsapp fa-fw"></a></li>
+                           <li><a href="{{setting.whatsapp}}" class="fa-brands fa-whatsapp fa-fw"></a></li>
+                           {% endif %}
+                           {% if setting.youtube %}
+                           <li><a href="{{setting.youtube}}" class="fa-brands fa-youtube fa-fw"></a></li>
                            {% endif %}
                         <!-- Language -->
                      </div>
@@ -73,20 +76,15 @@
                               <ul class="navigation clearfix">
                                  <li><a href="{% url 'index' %}">Главная страница</a></li>
                                  <li><a href="{% url 'about' %}">О нас</a></li>
-                                 <li><a href="contact.html">Услуги</a></li>
-                                 <li><a href="contact.html">Юристы</a></li>
-                                 <li><a href="contact.html">Документы</a></li>
+                                 {% comment %} <li><a href="contact.html">Услуги</a></li> {% endcomment %}
+                                 <li><a href="{% url 'team' %}">Юристы</a></li>
+                                 <li><a href="{% url 'document' %}">Документы</a></li>
                                  <li><a href="{% url 'contact' %}">Контакты</a></li>
                               </ul>
                            </div>
                         </nav>
                         <!-- Main Menu End-->
-                        <div class="outer-box d-flex align-items-center">
-                           <!-- Search Box -->
-                           <div class="search-box-outer">
-                              <div class="search-box-btn"><span class="flaticon-search"></span></div>
-                           </div>
-                        </div>
+                       
                         <!-- Mobile Navigation Toggler -->
                         <div class="mobile-nav-toggler"><span class="icon fa-solid fa-bars fa-fw"></span></div>
                      </div>
@@ -111,9 +109,7 @@
                         <!-- Main Menu End-->
                         <div class="outer-box d-flex align-items-center">
                            <!-- Search Box -->
-                           <div class="search-box-outer">
-                              <div class="search-box-btn"><span class="flaticon-search"></span></div>
-                           </div>
+                           
                            <!-- Cart Box -->
                            <!-- Mobile Navigation Toggler -->
                            <div class="mobile-nav-toggler"><span class="icon fa-solid fa-bars fa-fw"></span></div>

@@ -32,34 +32,16 @@
                <br>
                <div class="row clearfix">
                   <!-- Team Block Two -->
-                  {% for team in team%}
+                  {% for document in document%}
                   <div class="team-two_block col-lg-3 col-md-4 col-sm-12">
                      <div class="team-two_block-inner">
-                        <div class="team-two_block-image">
-                           <a href="#"><img src="{{team.image.url}}" alt="" /></a>
-                        </div>
-                        <div class="team-two_block-content">
-                           <div class="upper-box">
-                              <h5 class="team-two_block-heading"><a href="#">{{team.title}}</a></h5>
-                              <div class="team-two_block-designation">{{team.work}}</div>
-                           </div>
-                           <div class="team-two_block-text">{{team.descriptions}}</div>
-                           <!-- Social Box -->
-                           <ul class="team-two_social_box">
-                              {% if team.facebook %}
-                              <li><a href="{{team.facebook }}" class="fa-brands fa-facebook-f fa-fw"></a></li>
-                              {% endif %}
-                              {% if team.instagram %}
-                              <li><a href="{{team.instagram}}" class="fa-brands fa-instagram fa-fw"></a></li>
-                              {% endif %}
-                              {% if team.instagram %}
-                              <li><a href="{{team.instagram}}" class="fa-brands fa-linkedin fa-fw"></a></li>
-                              {% endif %}
-                              {% if team.facebook %}
-                              <li><a href="{{team.instagram}}" class="fa-solid fa-instagram fa-fw"></a></li>
-                              {% endif %}
-
-                           </ul>
+                        <div class="right-box">
+                           <a class="btn-style-seven theme-btn clearfix" href="{{document.document.url}}">
+                              <div class="btn-wrap">
+                                 <span class="text-one">{{document.title}}</span>
+                                 <span class="text-two">{{document.title}}</span>
+                              </div>
+                           </a>
                         </div>
                      </div>
                   </div>
@@ -68,6 +50,8 @@
                </div>
             </div>
          </section>
+         <br>
+
          
          <!-- End CTA One -->
          <!-- Footer -->

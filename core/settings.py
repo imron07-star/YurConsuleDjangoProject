@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     #apps
-    'apps.setting'
+    'apps.setting',
+    "apps.team",
+    "apps.document",
 ]
 
 MIDDLEWARE = [
@@ -114,7 +116,11 @@ USE_I18N = config.USE_I18N
 
 USE_TZ = config.USE_TZ
 
-
+EMAIL_USE_TLS = config.EMAIL_USE_TLS
+EMAIL_HOST = config.EMAIL_HOST
+EMAIL_PORT = config.EMAIL_PORT
+EMAIL_HOST_USER = config.EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = config.EMAIL_HOST_PASSWORD
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
