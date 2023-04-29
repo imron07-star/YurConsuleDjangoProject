@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
     #My imports
-from apps.setting.models import Setting
+from apps.index.models import Setting
 from .models import Document
 
 # Create your views here.

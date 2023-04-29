@@ -2,14 +2,9 @@ from django.shortcuts import render,redirect
 from django.core.mail import send_mail
 
     #My imports
-from .models import Setting,About,History,Number,Contact
+from .models import About,History,Number,Contact
+from apps.index.models import Setting
 # Create your views here.
-def index(request):
-    setting = Setting.objects.latest("id")
-    context = {
-        "setting":setting
-    }
-    return render(request, "setting/index-3.html", context)
 
 def contact(request):
     setting = Setting.objects.latest("id")

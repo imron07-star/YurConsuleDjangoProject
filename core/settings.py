@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'apps.setting',
     "apps.team",
     "apps.document",
+    "apps.index", 
 ]
 
 MIDDLEWARE = [
