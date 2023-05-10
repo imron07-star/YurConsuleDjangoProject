@@ -44,7 +44,7 @@ class Team(models.Model):
         verbose_name="Whatsapp",
         blank=True,null=True
     )   
-    youtube = models.URLField(
+    telegram = models.URLField(
         verbose_name="Youtube",
         blank=True,null=True
     )
