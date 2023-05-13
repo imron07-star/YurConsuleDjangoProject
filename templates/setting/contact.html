@@ -8,7 +8,7 @@
             <div class="auto-container">
                <h2>Наши контакты</h2>
                <ul class="bread-crumb clearfix">
-                  <li><a href="index.html">Домой</a></li>
+                  <li><a href="{% url 'index' %}">Домой</a></li>
                   <li>Контакты</li>
                </ul>
             </div>
@@ -29,13 +29,11 @@
                </div>
                <div class="row clearfix">
                   <!-- Branches Column -->
-                  {% if setting.locate_url %}
                   <div class="col-lg-6 mt-5 mt-lg-0">
                       <div class="contact-g-map">
-                          <iframe src="{{ setting.locate_url }}" width="550" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3032.275838480262!2d72.79070577568194!3d40.53549464840294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bdac0607797867%3A0xe0fa9e61d8e9420b!2zMzkyINCa0YPRgNC80LDQvdC20LDQvS3QlNCw0YLQutCwINGD0LsuLCDQntGI!5e0!3m2!1sru!2skg!4v1683993599533!5m2!1sru!2skg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                       </div>
                   </div>
-                  {% endif %}
                   <!-- Form Column -->
                   <div class="form-column col-lg-6 col-md-12 col-sm-12">
                      <div class="inner-column">

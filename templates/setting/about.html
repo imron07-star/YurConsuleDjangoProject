@@ -15,6 +15,7 @@
          </section>
          <!-- End Page Title -->
          <!-- About One / Style Two -->
+         {% if about %}
          <section class="about-one style-two" style="background-image:url({% static 'images/background/pattern-1.png' %} )">
             <div class="auto-container">
                <div class="about-one-inner_container">
@@ -69,8 +70,10 @@
                </div>
             </div>
          </section>
+         {% endif %}
          <!-- End About One -->
          <!-- Process One -->
+         {% if histor%}
          <section class="process-one">
             <div class="auto-container">
                <div class="process-one_inner-conatiner">
@@ -93,11 +96,13 @@
                </div>
             </div>
          </section>
+         {% endif %}
          <!-- End Process One -->
          <!-- Team Two -->
 
          <!-- End Team Two -->
          <!-- Counter One -->
+         {% if numbers%}
          <section class="counter-one" style="background-image:url({% static 'images/background/pattern-4.png' %} )">
             <div class="auto-container">
                <div class="row clearfix">
@@ -125,6 +130,7 @@
                </div>
             </div>
          </section>
+         {% endif %}
          <!-- End Counter One -->
          <!-- Testimonial One -->
 

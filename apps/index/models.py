@@ -36,10 +36,6 @@ class Setting(models.Model):
         verbose_name="График работы в часах",
         blank=True,null=True
     )
-    locate_url = models.URLField(
-        verbose_name="Ссылка для адресса",
-        blank=True,null=True        
-    )
     facebook = models.URLField(
         verbose_name="Facebook",
         blank=True,null=True        
@@ -48,10 +44,7 @@ class Setting(models.Model):
         verbose_name="Instagram",
         blank=True,null=True        
     )
-    instagram_url = models.URLField(
-        verbose_name="Ссылка Instagram для показа",
-        blank=True,null=True        
-    )
+
     whatsapp = models.URLField(
         verbose_name="Whatsapp",
         blank=True,null=True        

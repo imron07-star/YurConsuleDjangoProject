@@ -17,7 +17,7 @@ class About(models.Model):
         max_length=255,
         verbose_name="опыт"
     )
-    7
+    
     def  __str__(self):
         return f" {self.descriptions} - {self.desscriptions2}"
     

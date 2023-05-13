@@ -11,7 +11,7 @@
                    <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                       <div class="footer-widget logo-widget">
                          <div class="logo">
-                            <a href="index.html"><img src="{{setting.logo.url}}" width = "100px" alt="" /></a>
+                            <a href="{% url 'index' %}"><img src="{{setting.logo.url}}" width = "150px" alt="" /></a>
                          </div>
                          <div class="text">{{setting.descriptions}}</div>
                          <a href="{% url 'about' %}" class="theme-btn about-btn">О нас</a>
@@ -60,11 +60,16 @@
                       </div>
                    </div>
                    <!-- Footer Column -->
-                   <div class="col-lg-6 mt-5 mt-lg-0">
-                     <div class="contact-map">
-                        <iframe src="{{setting.instagram_url}}" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                      </div>
-                 </div>
+                   <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                     <div class="footer-widget contact-widget">
+                        <h4>Наше приложение:</h4>
+                        <a href="{{setting.app}}"><img src="{{setting.logo.url}}" width = "100px" alt="" /></a>
+                        <div class="timing">
+                           <strong>Связаться с разработчиком: </strong>
+                           +996 706 030 607<br> +996 558 000 350<br> +996 775 232 350
+                        </div>
+                     </div>
+                  </div>
                 </div>
              </div>
           </div>

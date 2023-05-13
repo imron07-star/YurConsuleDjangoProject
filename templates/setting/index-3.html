@@ -1,6 +1,9 @@
 {% extends 'homepage.html' %}
 {% load static %}
 {% block content %}
+<div class="page-wrapper">
+   <!-- Preloader -->
+   <div class="preloader"></div>
             {% include "include/header.html" %}
          <!-- End Main Header -->
          <!-- Slider Three -->
@@ -38,6 +41,7 @@
          
          <!-- End Feature Three -->
          <!-- About Two -->
+         {% if about%}
          <section class="about-two">
             <div class="auto-container">
                <div class="row clearfix">
@@ -72,8 +76,10 @@
                </div>
             </div>
          </section>
+         {% endif %}
          <!-- End About Two -->
          <!-- Case One -->
+         {% if service%}
          <section class="case-one">
             <div class="case-one_pattern-layer" style="background-image:url({% static 'images/background/pattern-12.png' %})"></div>
             <div class="case-one_pattern-layer-two" style="background-image:url({% static 'images/background/pattern-9.png' %})"></div>
@@ -113,8 +119,10 @@
                </div>
             </div>
          </section>
+         {% endif %}
          <!-- End Case One -->
          <!-- Services One -->
+         {% if review%}
          <section class="testimonial-two" style="background-image:url({% static 'images/background/2.jpg' %})">
             <div class="auto-container">
                <div class="content-box d-flex justify-content-end">
@@ -141,6 +149,7 @@
                </div>
             </div>
          </section>
+         {% endif %}
          <!-- End Skill One -->
          <!-- Business One -->
          <section class="business-one style-two">
@@ -188,15 +197,15 @@
                               <div class="row clearfix">
                                  <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                     <label>Полное имя *</label>
-                                    <input type="text" name="name" placeholder="Нурболот Эркинбаев" required="">
+                                    <input type="text" name="name" placeholder="Полное имя" required="">
                                  </div>
                                  <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                     <label>Ваша Почта *</label>
-                                    <input type="text" name="email" placeholder="email@example.com" required="">
+                                    <input type="text" name="email" placeholder="Ваша Почта" required="">
                                  </div>
                                  <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                     <label>Ваш отзыв*</label>
-                                    <textarea class="" name="message" placeholder="Спасибо..."></textarea>
+                                    <textarea class="" name="message" placeholder="Ваш отзыв..."></textarea>
                                  </div>
                                  <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                     <button class="theme-btn send-btn">
