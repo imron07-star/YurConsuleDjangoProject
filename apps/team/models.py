@@ -36,18 +36,11 @@ class Team(models.Model):
         verbose_name="Facebook",
         blank=True,null=True
     )
-    instagram = models.URLField(
-        verbose_name="Instagram",
-        blank=True,null=True
-    )
     whatsapp = models.URLField(
         verbose_name="Whatsapp",
         blank=True,null=True
     )   
-    telegram = models.URLField(
-        verbose_name="Youtube",
-        blank=True,null=True
-    )
+
 
     def __str__(self):
         return f"{self.title} - {self.work}"
