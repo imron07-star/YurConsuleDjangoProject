@@ -2207,7 +2207,7 @@ img{
 .sec-title_heading{
 	position:relative;
 	font-weight:700;
-	text-transform:capitalize;
+	
 	margin-top:var(--margin-top-20);
 }
 
@@ -2255,7 +2255,7 @@ img{
 
 .sec-title.style-two .sec-title_title{
 	color:darkgoldenrod;
-	text-transform:capitalize;
+	
 }
 
 .sec-title.style-two .sec-title_title:before,
@@ -2284,7 +2284,7 @@ img{
 	border-radius:50px;
 	display:inline-block;
 	color:var(--color-nineteen); 
-	text-transform:capitalize;
+	
 	font-size:var(--font-16);
 	background-color:var(--color-twentytwo);
 }
@@ -2298,7 +2298,7 @@ img{
 	font-weight:700;
 	line-height:60px;
 	font-size:var(--font-46);
-	text-transform:capitalize;
+	
 	margin-top:var(--margin-top-20);
 }
 
@@ -2362,7 +2362,7 @@ img{
 	position:relative;
 	font-weight:700;
 	font-size:var(--font-36);
-	text-transform:capitalize;
+	
 	margin-top:var(--margin-top-10);
 	color:var(--color-eightyfive);
 	font-family:var(--font-family-Poppins);
@@ -2435,7 +2435,7 @@ img{
 	position:relative;
 	font-weight:700;
 	color:var(--black-color);
-	text-transform:capitalize;
+	
 	margin-top:var(--margin-top-15);
 	font-family:var(--font-family-Roboto);
 }
