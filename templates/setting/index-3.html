@@ -81,7 +81,7 @@
          <!-- Case One -->
          {% if service%}
          <section class="case-one">
-            <div class="case-one_pattern-layer" style="background-image:url({% static 'images/background/pattern-12.png' %})"></div>
+            <div class="case-one_pattern-layer scrollBlock" style="background-image:url({% static 'images/background/pattern-12.png' %})"></div>
             <div class="case-one_pattern-layer-two" style="background-image:url({% static 'images/background/pattern-9.png' %})"></div>
             <div class="auto-container">
                <!-- Sec Title -->
@@ -89,7 +89,8 @@
                   <div class="sec-title_title">Наши услуги</div>
                   <h2 class="sec-title_heading">Позвольте нам заботиться о вас <br> наши услуги созданы для вашего комфорта и успеха.</h2>
                </div>
-               <div class="row clearfix">
+            
+               <div class="row clearfix scroller">
                   <!-- Case Block One -->
                   {% for service in service %}
                   <div class="service-block_one style-two col-lg-4 col-md-6 col-sm-12">
@@ -118,6 +119,7 @@
                   {% endfor %}
                </div>
             </div>
+            
          </section>
          {% endif %}
          <!-- End Case One -->
@@ -220,8 +222,15 @@
                      </div>
                   </div>
                </div>
-            </div>
+            </div>   
          </section>
+<style>
 
+   .scroller{
+      height:220px;
+      overflow:hidden scroll;
+      position:relative;
+   }
+</style>
       {% include "include/footer.html" %}   
 {% endblock%}
