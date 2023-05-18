@@ -11,21 +11,23 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import config
+from dotenv import load_dotenv
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv('.env')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config.SECRET_KEY
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config.DEBUG
+DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = config.ALOWED_HOSTS
+ALLOWED_HOSTS = list(os.environ.get('ALLOWED_HOSTS'))
 
 
 # Application definition
@@ -81,8 +83,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'NAME': os.environ.get('DATABASE_NAME'),
+    'USER': os.environ.get('DATABASE_USER'),
+    'PASSWORD': os.environ.get('DATABASE_USER_PASSWORD'),
+    'HOST': os.environ.get('DATABASE_HOST'),
+    'PORT': os.environ.get('DATABASE_PORT'),
     }
 }
 
@@ -109,19 +115,19 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = config.LANGUAGE_CODE
+LANGUAGE_CODE = os.environ.get('LANGUAGE_CODE')
 
-TIME_ZONE = config.TIME_ZONE
+TIME_ZONE = os.environ.get('TIME_ZONE')
 
-USE_I18N = config.USE_I18N
+USE_I18N = os.environ.get('USE_I18N')
 
-USE_TZ = config.USE_TZ
+USE_TZ = os.environ.get('USE_TZ')
 
-EMAIL_USE_TLS = config.EMAIL_USE_TLS
-EMAIL_HOST = config.EMAIL_HOST
-EMAIL_PORT = config.EMAIL_PORT
-EMAIL_HOST_USER = config.EMAIL_HOST_USER
-EMAIL_HOST_PASSWORD = config.EMAIL_HOST_PASSWORD
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_PORT = os.environ.get('EMAIL_PORT')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
