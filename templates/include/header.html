@@ -1,4 +1,6 @@
 {% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
          <header class="main-header header-style-three">
             <!-- Header Top -->
             <div class="header-top">
@@ -15,6 +17,9 @@
                            {% endif %}
                            {% if setting.instagram %}
                            <li><a href="{{setting.instagram}}" class="fa-brands fa-instagram fa-fw"></a></li>
+                           {% endif %}
+                           {% if setting.tiktok %}
+                           <li><a href="{{setting.tiktok}}" class="fab fa-tiktok fa-fw"></a></li>
                            {% endif %}
                            {% if setting.whatsapp %}
                            <li><a href="{{setting.whatsapp}}" class="fa-brands fa-whatsapp fa-fw"></a></li>

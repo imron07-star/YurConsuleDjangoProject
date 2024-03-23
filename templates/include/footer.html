@@ -1,4 +1,6 @@
 {% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 <footer class="main-footer style-three" style="background-image:url({% static 'images/background/pattern-11.png' %})">
     <div class="auto-container">
        <!-- Widgets Section -->
@@ -31,8 +33,9 @@
                             <li><a href="{{setting.instagram}}" class="fa-brands fa-instagram fa-fw"></a></li>
                             {% endif %}
                             {% if setting.tiktok%}
-                            <li><a href="{{setting.tiktok}}" class="fa-brands fa-tiktok fa-fw"></a></li>
+                            <li><a href="{{setting.tiktok}}" class="fab fa-tiktok fa-fw"></a></li>
                             {% endif %}
+                            <i class=""></i>
                            {% if setting.whatsapp%}
                             <li><a href="{{setting.whatsapp}}" class="fa-solid fa-whatsapp fa-fw"></a></li>
                             {% endif %}
