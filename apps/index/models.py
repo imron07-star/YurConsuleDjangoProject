@@ -44,7 +44,10 @@ class Setting(models.Model):
         verbose_name="Instagram",
         blank=True,null=True        
     )
-
+    tiktok = models.URLField(
+        verbose_name="Tiktok",
+        blank=True,null=True        
+    )
     whatsapp = models.URLField(
         verbose_name="Whatsapp",
         blank=True,null=True        
