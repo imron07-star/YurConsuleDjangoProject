@@ -1,0 +1,198 @@
+{% extends "include/homepage.html" %}
+{% load static %}
+{% block content %}
+
+<!--=====JQUERY=======-->
+<script src="{% static 'assets/js/jquery-3-6-0.min.js' %}"></script>
+</head>
+
+<body class="body4">
+  <!--=====PROGRESS START=======-->
+
+
+  <div class="overlay flex cac vac preloader-parent">
+    <div>
+      <div class="loader preloader flex vac">
+        <svg width="200" height="200">
+          <circle class="background" cx="90" cy="90" r="80" transform="rotate(-90, 100, 90)" />
+          <circle class="outer" cx="90" cy="90" r="80" transform="rotate(-90, 100, 90)" />
+        </svg>
+        <span class="circle-background">
+
+        </span>
+        <span class="logo animated fade-in">
+          <img src="{{ settings.logo.url }}" alt=""
+            style="height: 60px;width: 60px;object-fit: cover; border-radius: 50%;">
+        </span>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!--=====PROGRESS END=======-->
+
+  <div class="paginacontainer">
+
+    <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+
+  </div>
+
+
+  <!--=====HEADER START=======-->
+  {% include "include/header.html" %}
+  <!--=====HEADER END=======-->
+
+
+  <!--=====MOBILE HEADER START=======-->
+
+  <!--=====MOBILE HEADER END=======-->
+
+  <!--===== HERO AREA START=======-->
+
+  <div class="common-hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 m-auto text-center">
+          <div class="headding">
+            <h1>Наши контакты</h1>
+
+            <div class="list-area">
+              <a href="{% url 'index' %}">Главная страница</a>
+              <p class="icon"><i class="fa-regular fa-angle-right"></i></p>
+              <p class="page-text">Наши контакты</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--=====HERO AREA END=======-->
+
+
+  <!--=====CONTACT START=======-->
+
+  <div class="contact-page-sec sp3">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="contact6-box">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="contact6-form">
+                  <h3>Отправьте нам сообщение</h3>
+                  <p>Наше время ответа в течение 30 минут в рабочее время.</p>
+                  <div class="space10"></div>
+                  <form method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="single-input">
+                          <input type="text" name="first_name" placeholder="Имя">
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="single-input">
+                          <!-- Исправлена опечатка в атрибуте name -->
+                          <input type="text" name="last_name" placeholder="Фамилия">
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="single-input">
+                          <input type="number" name="phone" placeholder="Номер телефона">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="single-input">
+                          <input type="email" name="email" placeholder="Адрес электронной почты">
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <div class="single-input">
+                          <textarea cols="30" rows="4" name="message" placeholder="Сообщение"></textarea>
+                        </div>
+                      </div>
+
+                      <div class="space24"></div>
+                      <div class="button">
+                        <button type="submit" class="theme-btn7"><span class="span-btn">Отправить сообщение</span> <span
+                            class="arrow"><i class="fa-regular fa-arrow-right"></i></span></button>
+                      </div>
+
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="contact6-icon-box">
+                  <div class="icon">
+                    <img src="{% static 'assets/img/icons/contact6-icon1.png' %}" alt="">
+                  </div>
+                  <div class="headding">
+                    <h5>Связаться с нами</h5>
+                    <a>{{ settings.locate }}</a>
+                  </div>
+                </div>
+
+                <div class="contact6-icon-box">
+                  <div class="icon">
+                    <img src="{% static 'assets/img/icons/contact6-icon2.png' %}" alt="">
+                  </div>
+                  <div class="headding">
+                    <h5>Позвоните или напишите</h5>
+                    <a>{{ settings.phone }}</a>
+                  </div>
+                </div>
+
+                <div class="contact6-icon-box">
+                  <div class="icon">
+                    <img src="{% static 'assets/img/icons/contact6-icon3.png' %}" alt="">
+                  </div>
+                  <div class="headding">
+                    <h5>Напишите Нам Сегодня</h5>
+                    <a>{{ settings.email }}</a>
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--=====CONTACT END=======-->
+
+  <div class="google-map-contact-page">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2543098.9710410097!2d72.50262110000123!3d41.27294674999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x387f61b76fe4540d%3A0xc7f6e50fdd013778!2sKyrgyzstan!5e0!3m2!1sen!2sbd!4v1705386136712!5m2!1sen!2sbd"
+      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+
+  <div class="footer-area4-all">
+    <!--=====CTA START=======-->
+
+
+
+    <!--=====CTA END=======-->
+
+    <!--=====FOOTER START=======-->
+    {% include "include/footer.html" %}
+    <!--=====FOOTER END=======-->
+  </div>
+
+  {% endblock %}

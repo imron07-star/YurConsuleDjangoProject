@@ -1,0 +1,275 @@
+{% extends "include/homepage.html" %}
+{% load static %}
+{% block content %}
+ 
+    <!--=====JQUERY=======-->
+    <script src="{% static 'assets/js/jquery-3-6-0.min.js' %}"></script>
+  </head>
+
+  <body class="body4">
+  <!--=====PROGRESS START=======-->
+
+
+        <div class="overlay flex cac vac preloader-parent">
+          <div>
+              <div class="loader preloader flex vac">
+                  <svg width="200" height="200" >
+                      <circle class="background" cx="90" cy="90" r="80" transform="rotate(-90, 100, 90)"/>
+                      <circle class="outer" cx="90" cy="90" r="80" transform="rotate(-90, 100, 90)"/>
+                  </svg>
+                  <span class="circle-background">
+                    
+                  </span>
+                  <span class="logo animated fade-in">                
+                       <img src="{% static 'assets/img/logo/footer-logo5.png' %}" alt="">            
+                  </span>
+              </div>
+          </div>
+      </div>
+
+
+
+<!--=====PROGRESS END=======-->
+
+<div class="paginacontainer"> 
+
+  <div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+    </svg>
+  </div>
+
+</div> 
+
+
+    <!--=====HEADER START=======-->
+    {% include "include/header.html" %}
+    <!--=====HEADER END=======-->
+          
+
+
+          <!--===== HERO START=======-->
+
+          <div class="common-hero">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 m-auto text-center">
+                        <div class="headding">
+                            <h1>{{ news_item.title|safe }}</h1>
+                            
+                            <div class="list-area">
+                                <a href="{% url 'index' %}">Главная страница</a>
+                                <p class="icon"><i class="fa-regular fa-angle-right"></i></p>
+                                <p class="page-text">Новости</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <!--=====HERO END=======-->
+
+           <!--=====BLOG AREA START=======-->
+           <div class="blog-sidebar sp3">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 m-auto">
+                        <div class="single-service-post-area padding-right">
+                            <article>
+                                <div class="service-single-post">
+                                    <div class="image-area">
+                                        <img src="{% static 'assets/img/service/service-details-img1.png' %}" alt="">
+
+                                        <div class="shapes aniamtion-key-1">
+                                            <img src="{% static 'assets/img/shapes/about4-shape.png' %}" alt="">
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="space24"></div>
+                                    <div class="headding4">
+                                        <h3>{{ news_item.descriptions|safe }}</h3>
+                                        <div class="space16"></div>
+                                        <div class="space16"></div>
+                                        <div class="space16"></div>
+                                        <div class="space16"></div>
+                                        <div class="space16"></div>
+                                        <div class="space16"></div>
+                                    </div>
+
+                                    <div class="space30"></div>
+
+                                    <div class="commnet-area-all">
+                                        <div class="commnet-top-area">
+                                            <div class="commnet-icon">
+                                                <img src="{% static 'assets/img/icons/blog-details-commnt.png' %}" alt="">
+                                            </div>
+                                            <div class="commnet-prea">
+                                                <p>{{ review.message|safe }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="commnet-bottom-area">
+                                            <div class="image">
+                                                <div class="">
+                                                    <img src="{{ review.image.url }}" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="headding">
+                                                <h5><a href="#">{{ review.title }}</a></h5>
+                                                <p>{{ review.profession }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <div class="details-border"></div>
+
+                            <article>
+                                <div class="service-single-post">
+                                    <div class="headding4">
+                                        <h3>{{ news_item.descriptions2|safe }}</h3>
+                                        <div class="space16"></div>
+                                        <div class="space16"></div>
+                                        <div class="space16"></div>
+                                        <div class="space16"></div>
+                                        <div class="space16"></div>
+                                    </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="space40"></div>
+                                                <div class="image">
+                                                    <img src="{{ news_item.image.url }}" alt="">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <div class="space40"></div>
+                                                <div class="video-image-area popup-youtube " href="{{ news_item.video.url }}">
+                                                    <div class="image">
+                                                        <img src="{{ news_item.image.url }}" alt="">
+                                                    </div>
+                                                    <a href="{{ news_item.video.url }}" class="video-btn"><i class="fa-solid fa-play"></i></a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                </div>
+                            </article>
+
+
+
+                            <div class="details-border"></div>
+
+                            <div class="details-contact-form">
+                                <h6>ОСТАВЬТЕ ОТЗЫВ</h6>
+                                <p>Ваши отзывы - наша лучшая награда.
+                                  Спасибо, что делитесь своим опытом работы с нами и помогаете нам стать лучше.</p>
+                                <form action="#" method="POST">
+                                  {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="input-area">
+                                                <input type="text" name="first_name" placeholder="Имя">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="input-area">
+                                                <input type="text" name="last_name" placeholder="Фамилия">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-lg-6">
+                                            <div class="input-area">
+                                                <input type="email" name="email" placeholder="Адрес электронной почты">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="input-area">
+                                                <input type="number" name="phone" placeholder="Номер телефона">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <div class="input-area">
+                                                <textarea cols="30" rows="3" name="message" placeholder="Ваш отзыв"></textarea>
+                                            </div>
+
+                                            <div class="space30"></div>
+                                            <div class="from-btn">
+                                                <button type="submit" class="theme-btn7"><span class="span-btn">Отправить отзыв</span> <span class="arrow"><i class="fa-regular fa-arrow-right"></i></span></button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+           </div>
+
+          <!--=====BLOG AREA END=======-->
+
+          <!--=====BLOG AREA START=======-->
+
+          <div class="blog4 sp3">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 m-auto text-center">
+                  <div class="headding4">
+                    <h2>Прочтите Наши Дополнительние Новости</h2>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space30"></div>
+              <div class="row">
+                {% for news in news %}
+                <div class="col-lg-6">
+                  <div class="blog4-box" data-aos="zoom-in-up" data-aos-duration="900">
+                    <div class="blog4-img">
+                      <img src="{{ news_item.image.url }}" alt="">
+                    </div>
+
+                    <div class="headding-area">
+                      <a href="#" class="date"><img src="{% static 'assets/img/icons/date.png' %}" alt=""> 10 October 2024</a>
+                      <h5><a href="blog-details.html">{{ news_item.descriptions|safe }}</a></h5>
+                      <p>{{ news_item.descriptions2|truncatewords:10 }}</p>
+                      
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+
+            </div>
+          </div>
+
+          <!--=====BLOG AREA END=======-->
+
+
+                    <div class="footer-area4-all">
+          <!--=====CTA START=======-->
+  
+            <!--=====CTA END=======-->
+  
+               <!--=====FOOTER STAT=======-->
+               {% include "include/footer.html" %}
+              <!--=====FOOTER END=======-->
+                    </div>
+
+{% endblock %}

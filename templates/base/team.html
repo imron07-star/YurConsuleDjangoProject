@@ -1,0 +1,132 @@
+{% extends "include/homepage.html" %}
+{% load static %}
+{% block content %}
+ 
+    <!--=====JQUERY=======-->
+    <script src="{% static 'assets/js/jquery-3-6-0.min.js' %}"></script>
+  </head>
+
+  <body class="body4">
+  <!--=====PROGRESS START=======-->
+
+
+        <div class="overlay flex cac vac preloader-parent">
+          <div>
+              <div class="loader preloader flex vac">
+                  <svg width="200" height="200" >
+                      <circle class="background" cx="90" cy="90" r="80" transform="rotate(-90, 100, 90)"/>
+                      <circle class="outer" cx="90" cy="90" r="80" transform="rotate(-90, 100, 90)"/>
+                  </svg>
+                  <span class="circle-background">
+                    
+                  </span>
+                  <span class="logo animated fade-in">                
+                       <img src="{{ settings.logo.url }}" alt="" style="height: 60px;width: 60px;object-fit: cover; border-radius: 50%;">            
+                  </span>
+              </div>
+          </div>
+      </div>
+
+
+
+<!--=====PROGRESS END=======-->
+
+<div class="paginacontainer"> 
+
+  <div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+    </svg>
+  </div>
+
+</div> 
+
+
+    <!--=====HEADER START=======-->
+    {% include "include/header.html" %}
+    <!--=====HEADER END=======-->
+
+
+           <!--=====MOBILE HEADER START=======-->
+
+          <!--=====MOBILE HEADER END=======-->
+
+          <!--===== HEOR AREA START=======-->
+
+          <div class="common-hero">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 m-auto text-center">
+                        <div class="headding">
+                            <h1>Наша команда</h1>
+                            
+                            <div class="list-area">
+                                <a href="{% url 'index' %}">Главная страница</a>
+                                <p class="icon"><i class="fa-regular fa-angle-right"></i></p>
+                                <p class="page-text">Наша команда</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <!--=====HERO AREA END=======-->
+
+
+                    <!--=====TEAM AREA START=======-->
+          
+                    <div class="about-team sp3">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-lg-6 m-auto text-center">
+                            <div class="headding4">
+                              <span class="span">Наша команда</span>
+                              <h2>Познакомьтесь С Нашими Адвокатами</h2>
+                            </div>
+                          </div>
+                        </div>
+          
+                        <div class="space30"></div>
+          
+                        <div class="row">
+                          {% for team in team %}
+                          <div class="col-lg-3 col-md-6 ">
+                            <div class="">
+                              <div class="single-team-box text-center">
+                                <div class="team-img">
+                                  <img src="{{ team.image.url }}" alt="" style="height: 120px;width: 120px;object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <div class="headding3">
+                                  <h4><a href="#">{{ team.title }}</a></h4>
+                                  <p>{{ team.work }}</p>
+            
+                                  <ul class="icons">
+                                    <li><a href="{{team.facebook}}"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="{{team.whatsapp}}"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                    <li><a href="{{team.instagram}}"><i class="fa-brands fa-instagram"></i></a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+          
+                          {% endfor %}
+          
+                        </div>
+                      </div>
+                    </div>
+                      <!--=====TEAM AREA END=======-->
+
+
+
+                    <div class="footer-area4-all">
+          <!--=====CTA START=======-->
+  
+            <!--=====CTA END=======-->
+  
+               <!--=====FOOTER START=======-->
+               {% include "include/footer.html" %}
+              <!--=====FOOTER END=======-->
+                    </div>
+
+{% endblock %}

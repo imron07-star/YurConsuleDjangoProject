@@ -1,0 +1,168 @@
+{% extends "include/homepage.html" %}
+{% load static %}
+{% block content %}
+    <!--=====JQUERY=======-->
+    <script src="{% static 'assets/js/jquery-3-6-0.min.js' %}"></script>
+  </head>
+
+  <body class="body4">
+  <!--=====PROGRESS START=======-->
+
+
+        <div class="overlay flex cac vac preloader-parent">
+          <div>
+              <div class="loader preloader flex vac">
+                  <svg width="200" height="200" >
+                      <circle class="background" cx="90" cy="90" r="80" transform="rotate(-90, 100, 90)"/>
+                      <circle class="outer" cx="90" cy="90" r="80" transform="rotate(-90, 100, 90)"/>
+                  </svg>
+                  <span class="circle-background">
+                    
+                  </span>
+                  <span class="logo animated fade-in">                
+                       <img src="{% static 'assets/img/logo/footer-logo5.png' %}" alt="">            
+                  </span>
+              </div>
+          </div>
+      </div>
+
+
+
+<!--=====PROGRESS END=======-->
+
+<div class="paginacontainer"> 
+
+  <div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+    </svg>
+  </div>
+
+</div> 
+
+
+    <!--=====HEADER START=======-->
+    {% include "include/header.html" %}
+    <!--=====HEADER END=======-->
+
+
+           <!--=====MOBILE HEADER START=======-->
+
+          <!--=====MOBILE HEADER END=======-->
+
+          <!--===== HERO AREA START=======-->
+
+          <div class="common-hero">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 m-auto text-center">
+                        <div class="headding">
+                            <h1>Тематические исследования</h1>
+                            
+                            <div class="list-area">
+                                <a href="{% url 'index' %}">Главная страница</a>
+                                <p class="icon"><i></i></p>
+                                <p class="page-text">Тематические исследования</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <!--=====HERO AREA END=======-->
+
+           <!--=====CASE AREA START=======-->
+           <div class="case-study-sidebar sp3">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 m-auto">
+                        <div class="single-service-post-area padding-right">
+                            <article>
+                                <div class="service-single-post">
+                                    <div class="image-area">
+                                        <img src="{% static 'assets/img/service/service-details-img1.png' %}" alt="">
+
+                                        <div class="shapes aniamtion-key-1">
+                                            <img src="{% static 'assets/img/shapes/about4-shape.png' %}" alt="">
+                                        </div>
+                                    </div>
+
+                                    <div class="space24"></div>
+                                    <div class="headding4">
+                                        <h3>{{ legalinformation.title|safe }}</h3>
+                                        <div class="space16"></div>
+                                        <p>{{ legalinformation.descriptions|safe }}</p>
+                                        <div class="space16"></div>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <div class="details-border"></div>
+
+                            <article>
+                                <div class="service-single-post">
+                                    <div class="headding4">
+                                        <h3></h3>
+                                        <div class="space16"></div>
+                                        <p></p>
+                                        <div class="space16"></div>
+                                        <p>{{ legalinformation.descriptions2|safe }}</p>
+
+                                    </div>
+                                </div>
+                            </article>
+
+
+                            <div class="details-border"></div>
+
+                            <article>
+                                <div class="service-single-post">
+                                    <div class="headding4">
+                                        <h3></h3>
+                                        <div class="space16"></div>
+                                        <p></p>
+                                    </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="space40"></div>
+                                                <div class="image">
+                                                    <img src="{{ legalinformation.image.url }}" alt="">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <div class="space40"></div>
+                                                <div class="image">
+                                                    <img src="{{ legalinformation.image2.url }}" alt="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+           </div>
+
+          <!--=====case area end=======-->
+
+           <!--=====case area start=======-->
+                    <div class="footer-area4-all">
+          <!--=====CTA START=======-->  
+            <!--=====CTA END=======-->
+  
+               <!--=====FOOTER START=======-->
+               {% include "include/footer.html" %}
+              <!--=====FOOTER END=======-->
+                    </div>
+
+{% endblock %}

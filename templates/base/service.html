@@ -1,0 +1,174 @@
+{% extends "include/homepage.html" %}
+{% load static %}
+{% block content %}
+ 
+    <!--=====JQUERY=======-->
+    <script src="{% static 'assets/js/jquery-3-6-0.min.js' %}"></script>
+  </head>
+
+  <body class="body4">
+  <!--=====PROGRESS START=======-->
+
+
+        <div class="overlay flex cac vac preloader-parent">
+          <div>
+              <div class="loader preloader flex vac">
+                  <svg width="200" height="200" >
+                      <circle class="background" cx="90" cy="90" r="80" transform="rotate(-90, 100, 90)"/>
+                      <circle class="outer" cx="90" cy="90" r="80" transform="rotate(-90, 100, 90)"/>
+                  </svg>
+                  <span class="circle-background">
+                    
+                  </span>
+                  <span class="logo animated fade-in">                
+                       <img src="{{ settings.logo.url }}" alt="" style="height: 60px;width: 60px;object-fit: cover; border-radius: 50%;">            
+                  </span>
+              </div>
+          </div>
+      </div>
+
+
+
+<!--=====PROGRESS END=======-->
+
+<div class="paginacontainer"> 
+
+  <div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+    </svg>
+  </div>
+
+</div> 
+
+
+    <!--=====HEADER START=======-->
+    {% include "include/header.html" %}
+    <!--=====HEADER END=======-->
+
+
+           <!--=====MOBILE HEADER START=======-->
+
+          <!--=====MOBILE HEADER END=======-->
+
+          <!--===== HERO AREA START=======-->
+
+          <div class="common-hero">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 m-auto text-center">
+                        <div class="headding">
+                            <h1>Наш сервис</h1>
+                            
+                            <div class="list-area">
+                                <a href="{% url 'index' %}">Главная страница</a>
+                                <p class="icon"><i class="fa-regular fa-angle-right"></i></p>
+                                <p class="page-text">Наш сервис</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <!--=====HERO AREA END=======-->
+
+
+          <!--=====SERVCIE BOXS START=======-->
+
+
+                    <div class="service4 sp3">
+                        <div class="container">
+                          <div class="row">
+                            {% for service_list in service %}
+                            <div class="col-lg-4 col-md-6">
+                              <div class="">
+                                <div class="service4-box">
+                                  <div class="icon">
+                                    <img src="{% static 'assets/img/icons/service4-icon1.png' %}" alt="">
+                                  </div>
+                                  <div class="headding">
+                                    <h4><a href="service-details.html">{{ service_list.name }}</a></h4>
+                                    <p>{{ service_list.descriptions|safe }}</p>
+              
+                                    
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            {% endfor %}
+                          </div>
+
+
+                          <div class="space40"></div>
+                          <div class="row">
+                            <div class="col-12 m-auto">
+                                <!-- Отображение списка услуг на текущей странице -->
+                                <ul>
+                                  <div class="row">
+                                    {% for service_list in services %}
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="service4-box">
+                                                <div class="icon">
+                                                    <img src="{% static 'assets/img/icons/service4-icon1.png' %}" alt="">
+                                                </div>
+                                                <div class="heading">
+                                                    <h4><a href="service-details.html">{{ service_list.name }}</a></h4>
+                                                    <p>{{ service_list.descriptions|safe }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                
+                                </ul>
+                        
+                                <!-- Пагинация -->
+                                <div class="theme-pagination text-center">
+                                    <ul>
+                                        {% if services.has_previous %}
+                                            <li><a href="?page={{ services.previous_page_number }}"><i class="fa-solid fa-angle-left"></i></a></li>
+                                        {% else %}
+                                            <li><span><i class="fa-solid fa-angle-left"></i></span></li>
+                                        {% endif %}
+                        
+                                        {% for num in services.paginator.page_range %}
+                                            {% if services.number == num %}
+                                                <li><a class="active" href="?page={{ num }}">{{ num }}</a></li>
+                                            {% else %}
+                                                <li><a href="?page={{ num }}">{{ num }}</a></li>
+                                            {% endif %}
+                                        {% endfor %}
+                        
+                                        {% if services.has_next %}
+                                            <li><a href="?page={{ services.next_page_number }}"><i class="fa-solid fa-angle-right"></i></a></li>
+                                        {% else %}
+                                            <li><span><i class="fa-solid fa-angle-right"></i></span></li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+
+            
+                        </div>
+                      </div>
+            
+
+          <!--=====SERVICE BOXS END=======-->
+
+
+                    <div class="footer-area4-all">
+          <!--=====CTA START=======-->
+
+
+  
+            <!--=====CTA START=======-->
+  
+               <!--=====FOOTER START=======-->
+               {% include "include/footer.html" %}
+              <!--=====FOOTER END=======-->
+                    </div>
+
+{% endblock %}

@@ -1,88 +1,151 @@
-{% load static %}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-<footer class="main-footer style-three" style="background-image:url({% static 'images/background/pattern-11.png' %})">
-    <div class="auto-container">
-       <!-- Widgets Section -->
-       <div class="widgets-section">
-          <div class="row clearfix">
-             <!-- Big Column -->
-             <div class="big-column col-lg-6 col-md-12 col-sm-12">
-                <div class="row clearfix">
-                   <!-- Footer Column -->
-                   <div class="footer-column col-lg-6 col-md-6 col-sm-12">
-                      <div class="footer-widget logo-widget">
-                         <div class="logo">
-                            <a href="{% url 'index' %}"><img src="{{setting.logo.url}}" width = "150px" alt="" /></a>
-                         </div>
-                         <div class="text">{{setting.descriptions}}</div>
-                         <a href="{% url 'about' %}" class="theme-btn about-btn">О нас</a>
-                      </div>
-                   </div>
-                   <!-- Footer Column -->
-                   <div class="footer-column col-lg-6 col-md-6 col-sm-12">
-                      <div class="footer-widget newsletter-widget">
-                         <h4>Наши социальные сети:</h4>
-                         
-                         <!-- Social Box -->
-                         <ul class="social-box">
-                           {% if setting.facebook %}
-                            <li><a href="{{setting.facebook}}" class="fa-brands fa-facebook-f fa-fw"></a></li>
-                            {% endif%}
-                            {% if setting.instagram%}
-                            <li><a href="{{setting.instagram}}" class="fa-brands fa-instagram fa-fw"></a></li>
-                            {% endif %}
-                            {% if setting.tiktok%}
-                            <li><a href="{{setting.tiktok}}" class="fab fa-tiktok fa-fw"></a></li>
-                            {% endif %}
-                            <i class=""></i>
-                           {% if setting.whatsapp%}
-                            <li><a href="{{setting.whatsapp}}" class="fa-solid fa-whatsapp fa-fw"></a></li>
-                            {% endif %}
-                            {% if setting.youtube%}
-                            <li><a href="{{setting.youtube}}" class="fa-solid fa-youtube fa-fw"></a></li>
-                            {% endif %}
-                         </ul>
-                         <!-- End Social Box -->
-                      </div>
-                   </div>
-                </div>
-             </div>
-             <!-- Big Column -->
-             <div class="big-column col-lg-6 col-md-12 col-sm-12">
-                <div class="row clearfix">
-                   <!-- Footer Column -->
-                   <div class="footer-column col-lg-6 col-md-6 col-sm-12">
-                      <div class="footer-widget contact-widget">
-                         <h4>Свяжитесь:</h4>
-                         <ul class="contact-list">
-                            <li><span class="icon fa fa-phone"></span> +996 700560047</li>
-                            <li><span class="icon fa fa-phone"></span> +996 550560047</li>
-                            <li><span class="icon fa fa-envelope"></span> {{setting.email}}5</li>
-                         </ul>
-                         <div class="timing">
-                            <strong>Онлайн консультация: </strong>
-                            {{setting.graphic}}<br>{{setting.graphic_clock}}
-                         </div>
-                      </div>
-                   </div>
-                   <!-- Footer Column -->
-                   <div class="footer-column col-lg-6 col-md-6 col-sm-12">
-                     <div class="footer-widget contact-widget">
-                        <h4>Наше приложение:</h4>
-                        <a href="{{setting.app}}"><img src="{{setting.logo.url}}" width = "100px" alt="" /></a>
-                        <div class="timing">
-                           <strong>Связаться с разработчиком: </strong>
-                           +996 706 030 607<br> +996 558 000 350<br> +996 775 232 350
-                        </div>
-                     </div>
-                  </div>
-                </div>
-             </div>
-          </div>
-       </div>
-       <div class="footer-bottom">
-          <div class="copyright">2023 &copy;  Все права защищены <a href="https://www.instagram.com/codexx_studio/">Codex Studio</a></div>
-       </div>
+{% load static %} 
+<div class="cta4">
+  <div class="container">
+    <div class="row cta4-area align-items-center">
+      <div class="col-lg-7">
+        <div class="headding2-w">
+          <h2>Подписывайтесь На Нашу Новостную Рассылку!</h2>
+          <div class="space16"></div>
+          <p>Наша культура поощряет и стремится к инновациям, творчеству, юридической экспертизе и ориентирована на клиента. Ежедневно мы улучшаем нашу предпринимательскую среду </p>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="cta-form2">
+          <form method="POST" action="{% url 'subscribe' %}">
+            {% csrf_token %}
+            <input type="email" name="email" placeholder="Адрес электронной почты">
+            <div class="cta2-btn">
+                <button type="submit" class="theme-btn7">
+                    <span class="span-btn">Подписаться</span>
+                    <span class="arrow"><i class="fa-regular fa-arrow-right"></i></span>
+                </button>
+            </div>
+        </form>
+        </div>
+      </div>
     </div>
- </footer>
+  </div>
+</div>
+
+<footer class="footer-area4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-6">
+          <div class="single-footer mr50">
+            <div class="site-logo home1-site-logo">
+              <a href="{% url 'index' %}"
+                ><img src="{{ settings.logo.url }}" alt="" style="height: 60px;width: 60px;object-fit: cover; border-radius: 50%;"/>
+              </a>
+            </div>
+            <div class="space30"></div>
+           <div class="headding1-w">
+            <p>
+              {{settings.descriptions}}
+            </p>
+           </div>
+          </div>
+          <div class="space24"></div>
+          <div class="social">
+            <ul>
+              {% if settings.facebook %}
+              <li>
+                <a href="{{settings.facebook}}" ><i  class="fa-brands fa-facebook-f"></i></a>
+              </li>
+              {% endif %}
+              {% if settings.youtube %}
+              <li>
+                <a href="{{settings.youtube}}" ><i  class="fa-brands fa-youtube"></i></a>
+              </li>
+              {% endif %}
+              {% if settings.whatsapp %}
+              <li>
+                <a href="{{settings.whatsapp}}" ><i  class="fa-brands fa-whatsapp"></i></a>
+              </li>
+              {% endif %}
+              {% if settings.instagram %}
+              <li>
+                <a href="{{settings.instagram}}"><i  class="fa-brands fa-instagram"></i></a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+
+        </div>
+        <div class="col-lg col-sm-6 headding2">
+          <div class="single-footer">
+            <h3>
+              Меню
+            </h3>
+            <div class="space10"></div>
+            <div>
+              <ul>
+                <li><a href="{% url 'index' %}"> Главная страница</a></li>
+                <li><a href="{% url 'team' %}"> Наша команда</a></li>
+                <li><a href="{% url 'blog' %}"> Новости</a></li>
+                <li><a href="{% url 'contact' %}"> Наши контакты</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 headding2">
+          <div class="single-footer">
+            <h3>
+              Области Практики
+            </h3>
+            <div class="space10"></div>
+            <div>
+              <ul>
+                <li><a>Бизнес Закон</a></li>
+                <li><a> Личный вред</a></li>
+                <li><a>Семейное право</a></li>
+                <li><a> Уголовная защита</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 headding2">
+          <div class="single-footer">
+            <h3>
+              Контактная Информация
+            </h3>
+            <div class="space10"></div>
+            <div class="footer-contact-box">
+              <div class="footer-contact-icon">
+                <a ><i class="fa-light fa-phone-volume"></i></a>
+              </div>
+              <div class="footer-contact-hadding">
+                <a >{{ settings.phone }}</a>
+              </div> 
+            </div>
+            <div class="space10"></div>
+
+            <div class="footer-contact-box">
+              <div class="footer-contact-icon">
+                <a ><i class="fa-regular fa-envelope"></i></a>
+              </div>
+              <div class="footer-contact-hadding">
+                <a>{{ settings.email }}</a>
+              </div>
+            </div>
+          </div>
+          <div class="space24"></div>
+          <div class="single-footer">
+            <h3>
+              Наше Место Нахождения
+            </h3>
+            <div class="footer-contact-box">
+              <div class="footer-contact-icon">
+                <a ><i class="fa-regular fa-location-dot"></i></a>
+              </div>
+              <div class="footer-contact-hadding">
+                <a>{{ settings.locate }}</a>
+              </div> 
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="space60"></div>
+    </div>
+  </footer>

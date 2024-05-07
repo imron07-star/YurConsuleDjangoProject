@@ -1,151 +1,309 @@
 {% load static %}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-         <header class="main-header header-style-three">
-            <!-- Header Top -->
-            <div class="header-top">
-               <div class="auto-container">
-                  <div class="d-flex justify-content-between align-items-center flex-wrap">
-                     <div class="left-box">
-                        <div class="text">№1: Лучшая в Кызгызстане юридическое агентство </div>
-                     </div>
-                     <div class="right-box align-items-center d-flex">
-                        <!-- Social Box -->
-                        <ul class="header-social_box-two">
-                           {% if setting.facebook %}
-                           <li><a href="{{setting.facebook}}" class="fa-brands fa-facebook-f fa-fw"></a></li>
-                           {% endif %}
-                           {% if setting.instagram %}
-                           <li><a href="{{setting.instagram}}" class="fa-brands fa-instagram fa-fw"></a></li>
-                           {% endif %}
-                           {% if setting.tiktok %}
-                           <li><a href="{{setting.tiktok}}" class="fab fa-tiktok fa-fw"></a></li>
-                           {% endif %}
-                           {% if setting.whatsapp %}
-                           <li><a href="{{setting.whatsapp}}" class="fa-brands fa-whatsapp fa-fw"></a></li>
-                           {% endif %}
-                           {% if setting.youtube %}
-                           <li><a href="{{setting.youtube}}" class="fa-brands fa-youtube fa-fw"></a></li>
-                           {% endif %}
-                        <!-- Language -->
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- End Header Top -->
-            <!-- Header Upper -->
-            <div class="header-upper">
-               <div class="auto-container">
-                  <div class="inner-container d-flex justify-content-between align-items-center flex-wrap">
-                     <!-- Logo Box -->
-                     <div class="logo"><a href="{% url 'index' %}"><img src="{{setting.logo.url}}" width = "100px" alt="" title=""></a></div>
-                     <!-- Upper Right -->
-                     <div class="upper-right d-flex align-items-center flex-wrap">
-                        <!-- Info Box -->
-                        <div class="upper-column info-box">
-                           <div class="icon-box flaticon-phone-call"></div>
-                           <strong><a href="tel:996700560047">Позвоните нам: +996 700560047</a></strong>
-                           <strong><a href="tel:996 550560047">Позвоните нам: +996 550560047</a></strong>
+<header>
+    <div class="header-area header-area-all header-area-all4 d-none d-lg-block" id="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="header-elements _relative">
+              <div class="site-logo home1-site-logo">
+            <a href="{% url 'index' %}" >
+                  <img src="{{ settings.logo.url }}" alt="" style="height: 60px;width: 60px;object-fit: cover; border-radius: 50%;"/>
+                </a>
+              </div>
 
 
-                           ({{setting.graphic}})
-                        </div>
-                        <!-- Info Box -->
-                        <div class="upper-column info-box">
-                           <div class="icon-box flaticon-clock"></div>
-                           <strong>Напишите нам за помощью::</strong>
-                           {{setting.email}}
-                        </div>
-                        <!-- Info Box -->
-                        <div class="upper-column info-box">
-                           <div class="icon-box flaticon-pin"></div>
-                           <strong>Наш адрес</strong>
-                           {{setting.locate}}
-                        </div>
-                     </div>
-                  </div>
-               </div>
+
+              <div class="main-menu-ex main-menu-ex1">
+                <ul>
+                  <li><a href="{% url 'index'%}">Главная страница  <i></i></a> 
+                </li>
+
+                <li><a href="{% url 'about' %}">О нас </a></li>
+                <li><a href="{% url 'service' %}">Услуги<span><i></i></span></a>
+              </li>
+
+              <li class="has-dropdown"><a >Страницы <i class="fa-solid fa-angle-down"></i></a> 
+                <ul class="sub-menu">
+                  <li><a href="{% url 'team' %}">Наша команда</a></li>
+                  <li><a href="{% url 'testimonial'%}">Отзыв</a></li>
+                </ul>
+            </li>
+
+                  <li class="has-dropdown"><a href="{% url 'blog' %}">Новости <i class="fa-solid fa-angle-down"></i></a> 
+                    <ul class="sub-menu">
+
+                      <li  ><a href="{% url 'blog' %}">Новости<span><i ></i></span></a>
+                      </li>
+
+                      </li>
+
+                    </ul>
+                </li>
+                <li><a href="{% url 'contact' %}">Наши контакты</a></li>
+
+                    
+                </ul>
+              </div>
+
+
+
+              <div class="home4-header-buttons">
+
+    
+          <!-- SIDEBAR START -->
+          <aside class="slide-bar">
+            <div class="close-mobile-menu">
+                <a class="tx-close"></a>
             </div>
-            <!-- Header Lower -->
-            <div class="header-lower">
-               <div class="auto-container">
-                  <div class="inner-container">
-                     <div class="nav-outer d-flex justify-content-between align-items-center flex-wrap">
-                        <!-- Main Menu -->
-                        <nav class="main-menu show navbar-expand-md">
-                           <div class="navbar-header">
-                              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                              <span class="icon-bar"></span>
-                              <span class="icon-bar"></span>
-                              <span class="icon-bar"></span>
-                              </button>
-                           </div>
-                           <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
-                              <ul class="navigation clearfix">
-                                 <li><a href="{% url 'index' %}">Главная страница</a></li>
-                                 <li><a href="{% url 'about' %}">О нас</a></li>
-                                 {% comment %} <li><a href="contact.html">Услуги</a></li> {% endcomment %}
-                                 <li><a href="{% url 'team' %}">Юристы</a></li>
-                                 <li><a href="{% url 'document' %}">Документы</a></li>
-                                 <li><a href="{% url 'contact' %}">Контакты</a></li>
-                              </ul>
-                           </div>
-                        </nav>
-                        <!-- Main Menu End-->
-                       
-                        <!-- Mobile Navigation Toggler -->
-                        <div class="mobile-nav-toggler"><span class="icon fa-solid fa-bars fa-fw"></span></div>
-                     </div>
+    
+            <div class="sidebar-info">
+                <div class="sidebar-logo mb-30">
+                    <a href="{% url 'index' %}">
+                      <img src="{{ settings.logo.url }}" alt="" style="height: 60px;width: 60px;object-fit: cover; border-radius: 50%;"> 
+                    </a>
+                </div>
+                <div class="sidebar-content">
+                    <p>Произведите революцию в своем будущем: используйте всю мощь</p>
+                </div>
+                <ul class="sidebar-menu list-unstyled">
+                    <li><a href="{% url 'about' %}">О нас</a></li>
+                    <li><a href="{% url 'service' %}">Услуги</a></li>
+                    <li><a href="{% url 'blog' %}">Новости</a></li>
+                    <li><a href="{% url 'contact' %}">Наши контакты</a></li>
+                </ul>
+    
+                
+
+                <div class="single-footer">
+                  <h3>
+                    Контактная Информация
+                  </h3>
+                  <div class="space10"></div>
+                  <div class="footer-contact-box">
+                    <div class="footer-contact-icon">
+                      <a ><i class="fa-light fa-phone-volume"></i></a>
+                    </div>
+                    <div class="footer-contact-hadding">
+                      <a >{{ settings.phone }}</a>
+                    </div> 
                   </div>
-               </div>
+                  <div class="space10"></div>
+
+                  <div class="footer-contact-box">
+                    <div class="footer-contact-icon">
+                      <a ><i class="fa-regular fa-envelope"></i></a>
+                    </div>
+                    <div class="footer-contact-hadding">
+                      <a >{{ settings.email }}</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="space24"></div>
+                <a href="{% url 'contact' %}" class="theme-btn7"><span class="span-btn">Наши контакты</span> <span class="arrow"><i class="fa-regular fa-arrow-right"></i></span></a>
+    
+                <div class="social">
+                      <ul>
+                        <li>
+                          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+
+
             </div>
-            <!-- End Header Lower -->
-            <!-- Sticky Header  -->
-            <div class="sticky-header">
-               <div class="auto-container">
-                  <div class="d-flex justify-content-between align-items-center">
-                     <!-- Logo -->
-                     <div class="logo">
-                        <a href="{% url 'index' %}" title=""><img src="{{setting.logo.url}}" width = "100px"alt="" title=""></a>
-                     </div>
-                     <!-- Right Col -->
-                     <div class="right-box d-flex align-items-center flex-wrap">
-                        <!-- Main Menu -->
-                        <nav class="main-menu">
-                           <!--Keep This Empty / Menu will come through Javascript-->
-                        </nav>
-                        <!-- Main Menu End-->
-                        <div class="outer-box d-flex align-items-center">
-                           <!-- Search Box -->
-                           
-                           <!-- Cart Box -->
-                           <!-- Mobile Navigation Toggler -->
-                           <div class="mobile-nav-toggler"><span class="icon fa-solid fa-bars fa-fw"></span></div>
-                        </div>
-                     </div>
+
+
+            <nav class="side-mobile-menu">
+                <div class="header-mobile-search">
+                    <form role="search" method="get" action="#"> 
+                        <input type="text" placeholder="Search Keywords"> 
+                        <button type="submit"><i class="ti-search"></i></button>
+                    </form>
+                </div>
+                <ul id="mobile-menu-active">
+                    <li class="dropdown"><a href="index.html">Home</a>
+                        <ul class="sub-menu">
+                            <li><a href="index.html">Home Chatbot</a></li>
+                            <li><a href="home-2.html">Home CRM</a></li>
+                            <li class="active"><a href="home-3.html">Home Copy Writing</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="scrollspy-btn" href="#whatwedo">What we do</a></li>
+                    <li><a class="scrollspy-btn" href="#process">Process</a></li>
+                    <li class="dropdown">
+                        <a href="#!">Blog</a>
+                        <ul class="sub-menu">
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="blog-single.html">Blog Details</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="scrollspy-btn" href="{% url 'contact' %}">Get in touch</a></li>
+                </ul>
+            </nav>
+
+        </aside>
+    
+        
+        <div class="body-overlay"></div>
+        <!-- SIDEBAR END -->
+
+
+
+
+                <div class="button2-all">
+                  <a href="{% url 'contact' %}" class="theme-btn7"><span class="span-btn">Наши контакты</span> <span class="arrow"><i class="fa-regular fa-arrow-right"></i></span></a>
+                </div>
+
+                <div class="contact-3 d-lg-block d-none">
+                  <div class="consulting2">
+                        <div class="marginsp1"></div>
+                       <a class="hamburger_menu header__bar-icon" href="javascript:void(0);">
+                        <i class="fa-duotone fa-bars-staggered"></i>
+                       </a>      
+                    </div>
                   </div>
-               </div>
+
+              </div>
+              <div class="mobile-menu-bar d-lg-none">
+                <i class="fas fa-bars"></i>
+              </div>
             </div>
-            <!-- End Sticky Menu -->
-            <!-- Mobile Menu  -->
-            <div class="mobile-menu">
-               <div class="menu-backdrop"></div>
-               <div class="close-btn"><span class="icon fas fa-window-close fa-fw"></span></div>
-               <nav class="menu-box">
-                  <div class="nav-logo"><a href="{% url 'index' %}l"><img src="{{setting.logo.url}}" width = "100px" alt="" title=""></a></div>
-                  <!-- Search -->
-                  <div class="search-box">
-                     <form method="post" action="contact.html">
-                        <div class="form-group">
-                           <input type="search" name="search-field" value="" placeholder="SEARCH HERE" required>
-                           <button type="submit"><span class="icon flaticon-001-loupe"></span></button>
-                        </div>
-                     </form>
-                  </div>
-                  <div class="menu-outer">
-                     <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
-                  </div>
-               </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ############################################################################################################################# -->
+  <div class="mobile-header mobile-header-4 d-block d-lg-none ">
+    <div class="container-fluid">
+      <div class="col-12">
+        <div class="mobile-header-elements">
+          <div class="mobile-logo">
+            <a href="{% url 'index' %}"><img src="{{settings.logo.url}}" width = "80px" alt="" /></a>
+          </div>
+          <div class="mobile-logo-unick">
+            <img src="{% static 'assets/img/logo/header-logo1.svg' %}" alt="">
+          </div>
+          <div class="mobile-nav-icon">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="mobile-sidebar d-block d-lg-none">
+    <div class="menu-close">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+    <div class="mobile-logo-unick">
+      <img src="{{settings.logo.url}}" width = "100px" alt="">
+    </div>
+    <div class="mobile-nav">
+
+      <li class="has-dropdown"><a href="{% url 'index' %}">Главная страница</a> 
+    </li>
+
+  <li><a href="{% url 'about' %}">О нас</a></li>
+
+          <li class="has-dropdown"><a href="">Услуги </a> 
+        </li>
+
+        <li class="has-dropdown"><a href="#">Страницы</a> 
+          <ul class="sub-menu">
+            <li><a href="{% url 'team' %}">Наша команда</a></li>
+            <li><a href="{% url 'testimonial' %}">Отзыв</a></li>
+          </ul>
+      </li>
+
+            <li class="has-dropdown"><a href="{% url 'blog' %}">Новости</a> 
+              <ul class="sub-menu">
+                <li  class="has-dropdown has-dropdown1"><a href="{% url 'blog' %}">Новости</a>
+              </ul>
+          </li>
+          <li><a href="{% url 'contact' %}">Наши контакты</a></li>
+
+
+      <li><a class="mobile-menu-button" href="{% url 'contact' %}">Наши контакты</a></li>
+
+
+      
+    </div>
+
+    <div class="mobile-menu-social">
+      <h3>Контактная Информация</h3>
+      <div class="footer4-contact-info">
+        <div class="mobile-menu-icon-box">
+          <div class="mobile-menu-icon">
+          </div>
+          <div class="mobile-menu-a">
+            <a>{{ settings.phone }}</a>
+          </div>
+        </div>
+
+        <div class="mobile-menu-icon-box">
+          <div class="mobile-menu-icon">
+          </div>
+          <div class="mobile-menu-a">
+            <a>{{ settings.email }}</a>
+          </div>
+        </div>
+
+        <div class="mobile-menu-social">
+          <h3>Наше Место Нахождения</h3>
+          
+          <div class="mobile-menu-icon-box">
+            <div class="mobile-menu-icon">
             </div>
-            <!-- End Mobile Menu -->
-         </header>
+            <div class="mobile-menu-a">
+              <a>{{ settings.locate }}</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mobile-menu-social">
+          <h3>Ссылки на социальные сети</h3>
+          
+          <div class="mobile-menu-social-icon">
+            <ul>
+              {% if settings.facebook %}
+              <li>
+                <a href="{{settings.facebook}}" ><i  class="fa-brands fa-facebook-f"></i></a>
+              </li>
+              {% endif %}
+              {% if settings.youtube %}
+              <li>
+                <a href="{{settings.youtube}}" ><i  class="fa-brands fa-youtube"></i></a>
+              </li>
+              {% endif %}
+              {% if settings.whatsapp %}
+              <li>
+                <a href="{{settings.whatsapp}}" ><i  class="fa-brands fa-whatsapp"></i></a>
+              </li>
+              {% endif %}
+              {% if settings.instagram %}
+              <li>
+                <a href="{{settings.instagram}}"><i  class="fa-brands fa-instagram"></i></a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>

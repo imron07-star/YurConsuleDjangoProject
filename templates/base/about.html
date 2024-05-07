@@ -1,0 +1,255 @@
+{% extends "include/homepage.html" %}
+{% load static %}
+{% block content %}
+ 
+    <!--=====JQUERY=======-->
+    <script src="{% static 'assets/js/jquery-3-6-0.min.js' %}"></script>
+  </head>
+
+  <body class="body4">
+  <!--=====PROGRESS START=======-->
+
+
+    <div class="overlay flex cac vac preloader-parent">
+      <div>
+          <div class="loader preloader flex vac">
+              <svg width="200" height="200" >
+                  <circle class="background" cx="90" cy="90" r="80" transform="rotate(-90, 100, 90)"/>
+                  <circle class="outer" cx="90" cy="90" r="80" transform="rotate(-90, 100, 90)"/>
+              </svg>
+              <span class="circle-background">
+                
+              </span>
+              <span class="logo animated fade-in">                
+                  <img src="{{ settings.logo.url }}" alt="" style="height: 60px;width: 60px;object-fit: cover; border-radius: 50%;">            
+              </span>
+          </div>
+      </div>
+  </div>
+
+
+
+<!--=====PROGRESS END=======-->
+
+  <div class="paginacontainer"> 
+
+  <div class="progress-wrap">
+  <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+  <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+  </svg>
+  </div>
+
+  </div> 
+
+
+    <!--=====HEADER START=======-->
+    {% include "include/header.html" %}
+    <!--=====HEADER END=======-->
+
+
+          <!--===== HERO AREA START=======-->
+
+          <div class="common-hero">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 m-auto text-center">
+                        <div class="headding">
+                            <h1>О нас</h1>
+                            
+                            <div class="list-area">
+                                <a href="{% url 'index' %}">Главная страница</a>
+                                <p class="icon"><i class="fa-regular fa-angle-right"></i></p>
+                                <p class="page-text">О нас</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <!--=====HERO AREA HEADER END=======-->
+
+
+          <!--=====ABOUT START=======-->
+
+          <div class="about4 sp3">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-lg-6">
+                  <div class="images">
+                    <div class="shape aniamtion-key-1">
+                      <img src="{% static 'assets/img/shapes/about4-shape.png' %}" alt="">
+                    </div>
+                    <div>
+                      <img src="{% static 'assets/img/about/about4-img.png' %}" alt="">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="headding4">
+                    <span class="span">О нас</span>
+                    <h2>{{ about.descriptions }}</h2>
+                    <div class="space16"></div>
+                    <p>{{ about.descriptions2|safe }}</p>
+
+                    <div class="row">
+                      
+                      <div class="col-md-4">
+                        <div class="counter-box">
+                          <h3><span class="counter">{{ numbers.client }}</span>k+</h3>
+                          <p>Довольные клиенты</p>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="counter-box">
+                          <h3><span class="counter">{{ numbers.experience }}</span>+</h3>
+                          <p>Многолетний опыт</p>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="counter-box">
+                          <h3><span class="counter">{{ numbers.review }}</span>k+</h3>
+                          <p>Положительных отзывов</p>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="space30"></div>
+
+                    <div class="">
+                      <a href="{% url 'contact' %}" class="theme-btn7"><span class="span-btn">Заплонируйте бесплатную консультацию</span> <span class="arrow"><i class="fa-regular fa-arrow-right"></i></span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--=====ABOUT end=======-->
+
+          <!--=====TAB START=======-->
+
+        <div class="about-tabs sp3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 text-center m-auto">
+                        <div class="headding4">
+                            <span class="span">История юриста</span>
+                            <h2>Наша Юридическая История</h2>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-lg-10 m-auto text-center">
+                        <ul class="nav nav-pills tab-header-all mb-3" id="pills-tab" role="tablist">
+                            {% for year in years %}
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link {% if forloop.first %}active{% endif %}" id="tab{{ year.id }}" data-bs-toggle="pill" data-bs-target="#about-tab{{ year.id }}" type="button" role="tab" aria-controls="about-tab{{ year.id }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">{{ year.title }}</button>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="space60"></div>
+    
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="tab-content" id="pills-tabContent">
+                            {% for year in years %}
+                            <div class="tab-pane fade {% if forloop.first %}show active{% endif %}" id="about-tab{{ year.id }}" role="tabpanel" aria-labelledby="tab{{ year.id }}">
+                                {% for history in year.history_items.all %}
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="tab-content-box">
+                                            <div class="headding">
+                                                <h3>{{ history.title }}</h3>
+                                                <div class="space24"></div>
+                                                <p><span class="text">{{ history.descriptions|safe }}</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="image">
+                                            <img src="{{ history.image.url }}" alt="{{ history.title }}">
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        
+        
+        
+
+          <!--=====TAB END=======-->
+
+          
+                    <!--=====TEAM AREA START=======-->
+                    <div class="about-team sp3">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-lg-6 m-auto text-center">
+                            <div class="headding4">
+                              <span class="span">Наша команда</span>
+                              <h2>Познакомьтесь С Нашими Адвокатами</h2>
+                            </div>
+                          </div>
+                        </div>
+          
+                        <div class="space30"></div>
+          
+                        <div class="row">
+                          {% for team in team %}
+                          <div class="col-lg-3 col-md-6 ">
+                            <div class="">
+                              <div class="single-team-box text-center">
+                                <div class="team-img">
+                                  <img src="{{ team.image.url }}" alt="" style="height: 120px;width: 120px;object-fit: cover; border-radius: 50%;">
+                                </div>
+                                <div class="headding3">
+                                  <h4><a href="#">{{ team.title }}</a></h4>
+                                  <p>{{ team.work }}</p>
+            
+                                  <ul class="icons">
+                                    <li><a href="{{team.facebook}}"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="{{team.whatsapp}}"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                    <li><a href="{{team.instagram}}"><i class="fa-brands fa-instagram"></i></a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+          
+                          {% endfor %}
+          
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!--=====TEAM AREA END=======-->
+
+
+
+                    <div class="footer-area4-all">
+          <!--=====CTA START=======-->
+
+  
+            <!--=====CTA END=======-->
+                      
+               <!--=====FOOTER START=======-->
+               {% include "include/footer.html" %}
+              <!--=====FOOTER END=======-->
+                    </div>
+
+{% endblock %}
